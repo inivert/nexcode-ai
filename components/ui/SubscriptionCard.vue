@@ -57,6 +57,7 @@ const handleSubmit = async () => {
           <h3 class="text-lg font-medium text-white/90">
             Subscribe to get notified at launch and get limited special discount.
           </h3>
+        <div class="mb-4" />
         </CardItem>
 
         <!-- Form -->
