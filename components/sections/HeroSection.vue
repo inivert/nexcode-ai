@@ -10,7 +10,7 @@
       <div class="flex size-full max-w-6xl flex-col md:flex-row">
         <div class="flex size-full h-[36rem] flex-col items-center justify-center md:h-full md:items-start md:p-8">
           <span class="inline-block gap-2 bg-gradient-to-b from-neutral-200 to-neutral-500 bg-clip-text text-center text-5xl font-bold text-transparent md:text-left md:text-6xl">
-            Build smarter code with
+            Easily make your own automations with
             <TextHighlight
               class="rounded-xl bg-gradient-to-r from-pink-500 to-violet-500 px-4 py-1"
               text-end-color="hsl(var(--accent))"
@@ -21,27 +21,37 @@
           <span class="flex w-full flex-row justify-center py-6 md:justify-start">
             <AnimatedTooltip :items="people" />
           </span>
-          <Button 
-            variant="gradient"
-            size="lg"
-            class="group relative overflow-hidden"
-          >
-            <span class="flex items-center gap-2">
-              Get Started
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" 
-                viewBox="0 0 20 20" 
-                fill="currentColor"
-              >
-                <path 
-                  fill-rule="evenodd" 
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" 
-                  clip-rule="evenodd" 
-                />
-              </svg>
-            </span>
-          </Button>
+          <div class="flex items-center gap-4">
+            <Button 
+              variant="gradient"
+              size="lg"
+              class="group relative overflow-hidden"
+              @click="$router.push('/auth/signup')"
+            >
+              <span class="flex items-center gap-2">
+                Get Started
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" 
+                  viewBox="0 0 20 20" 
+                  fill="currentColor"
+                >
+                  <path 
+                    fill-rule="evenodd" 
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" 
+                    clip-rule="evenodd" 
+                  />
+                </svg>
+              </span>
+            </Button>
+            <Button 
+              variant="secondary"
+              size="lg"
+              @click="$router.push('/auth/signin')"
+            >
+              Sign in
+            </Button>
+          </div>
         </div>
         <div class="relative flex flex-col items-center justify-center overflow-hidden md:max-w-96">
           <SubscriptionCard @subscribe="handleSubscribe" />
@@ -100,5 +110,5 @@ const people = [
     designation: "The Explorer",
     image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=3534&q=80",
   }
-];
+]
 </script>
